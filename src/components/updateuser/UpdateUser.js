@@ -10,7 +10,7 @@ const UpdateUser = () => {
       <div>
         <h1>Edit User</h1>
 
-        <Link to='/newuser'>
+        <Link to='/newUser'>
           <button>Create</button>
         </Link>
       </div>

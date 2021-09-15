@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { users } from '../../data/UserData';
 import { DataGrid } from '@material-ui/data-grid';
+import { products } from '../../data/ProductData';
 import { Avatar } from '@material-ui/core';
 import DeleteOutlineIcon from '@material-ui/icons/DeleteOutline';
 import { Link } from 'react-router-dom';
 
-const UserList = () => {
-  const [data, setData] = useState(users);
+const ProductList = () => {
+  const [data, setData] = useState(products);
 
   const handleClick = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -16,21 +16,21 @@ const UserList = () => {
   const columns = [
     { field: 'id', headerName: 'ID', width: 120 },
     {
-      field: 'user',
-      headerName: 'User',
-      width: 200,
+      field: 'product',
+      headerName: 'Product Name',
+      width: 280,
       renderCell: (params) => {
         return (
           <RenderContainer>
             <AvatarIcon src={params.row.avatar} alt='' />
-            {params.row.user}
+            {params.row.product}
           </RenderContainer>
         );
       },
     },
     {
-      field: 'email',
-      headerName: 'Email',
+      field: 'stock',
+      headerName: 'Stock',
       width: 250,
     },
     {
@@ -42,8 +42,8 @@ const UserList = () => {
       },
     },
     {
-      field: 'transaction',
-      headerName: 'Transaction',
+      field: 'price',
+      headerName: 'Price',
       width: 200,
     },
     {
@@ -53,7 +53,7 @@ const UserList = () => {
       renderCell: (params) => {
         return (
           <ActionContainer>
-            <Link to={`/user/${params.row.id}`}>
+            <Link to={`/product/${params.row.id}`}>
               <button>Edit</button>
             </Link>
             <DeleteOutlineIcon onClick={() => handleClick(params.row.id)} />
@@ -64,7 +64,7 @@ const UserList = () => {
   ];
 
   return (
-    <UserListContainer>
+    <ProductListConatiner>
       <DataGrid
         rows={data}
         columns={columns}
@@ -72,16 +72,14 @@ const UserList = () => {
         checkboxSelection
         disableSelectionOnClick
       />
-    </UserListContainer>
+    </ProductListConatiner>
   );
 };
 
-export default UserList;
+export default ProductList;
 
-const UserListContainer = styled.div`
+const ProductListConatiner = styled.div`
   flex: 4;
-  width: 100vw;
-  height: 90vh;
 `;
 const RenderContainer = styled.div`
   display: flex;
@@ -92,6 +90,7 @@ const RenderContainer = styled.div`
 
 const AvatarIcon = styled(Avatar)`
   margin-right: 10px;
+  object-fit: cover;
 `;
 
 const ActionContainer = styled.div`

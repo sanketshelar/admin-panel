@@ -18,8 +18,10 @@ const Quick = () => {
           </Link>
         </span>
         <span>
-          <CardGiftcardIcon />
-          Products
+          <Link to='/products'>
+            <CardGiftcardIcon />
+            Products
+          </Link>
         </span>
         <span>
           <MonetizationOnOutlinedIcon />
