@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { users } from '../../data/UserData';
 import { DataGrid } from '@material-ui/data-grid';
 import { Avatar } from '@material-ui/core';

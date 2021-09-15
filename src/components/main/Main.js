@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Chart from './pages/Chart';
 import InfoWidgets from './pages/InfoWidgets';
 import { data } from '../../data/ChartData';
@@ -7,6 +7,7 @@ import Members from './pages/Members';
 import Transaction from './pages/Transaction';
 import { members } from '../../data/MemberData';
 import { TransData } from '../../data/TransactionData';
+import { device } from '../../responsive/Responsive';
 
 const Main = () => {
   console.log(data);
@@ -75,6 +76,11 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media ${device.tablet} {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const ChartContainer = styled.div``;
@@ -82,6 +88,11 @@ const ChartContainer = styled.div``;
 const LowerContainer = styled.div`
   display: flex;
   margin: 10px 20px;
+
+  @media ${device.tablet} {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 const SmContainer = styled.div`
@@ -110,6 +121,10 @@ const LgContainer = styled.div`
 
   > h2 {
     margin: 15px 15px;
+  }
+
+  @media ${device.tablet} {
+    margin: 25px 0px;
   }
 `;
 

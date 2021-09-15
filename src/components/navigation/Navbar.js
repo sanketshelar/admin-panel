@@ -5,6 +5,7 @@ import LanguageIcon from '@material-ui/icons/Language';
 import SettingsIcon from '@material-ui/icons/Settings';
 import Avatar from '@material-ui/core/Avatar';
 import { Link } from 'react-router-dom';
+import { device } from '../../responsive/Responsive';
 
 const navbar = () => {
   return (
@@ -51,6 +52,10 @@ const NavbarContainer = styled.div`
   z-index: 999;
   background-color: white;
   height: 80px;
+
+  @media ${device.tablet} {
+    width: 100%;
+  }
 `;
 
 const NavbarLeft = styled.div`

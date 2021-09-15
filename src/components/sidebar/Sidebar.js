@@ -25,5 +25,4 @@ const SidebarContainer = styled.div`
   height: calc(100vh - 80px);
   position: sticky;
   top: 80px;
-  min-width: 300px;
 `;
